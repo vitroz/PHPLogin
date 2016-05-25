@@ -1,6 +1,9 @@
 <?php
     include("config.php");
     include('class/userClass.php');
+    if($_SESSION['uid']){ //Valida se o usuario esta logado e tenta acessar a pagina de login.
+        header("Location: /projeto/cadastro.php"); // Page redirecting to home.php 
+    }
     $userClass = new userClass();
 
     $errorMsgReg='';
@@ -12,10 +15,9 @@
     if(strlen(trim($usernameEmail))>1 && strlen(trim($password))>1 ) {
         $uid=$userClass->userLogin($usernameEmail,$password);
             if($uid){
-            $url=BASE_URL.'home.php';
-            header("Location: $url"); // Page redirecting to home.php 
+                header("Location: /projeto/cadastro.php"); // Page redirecting to home.php 
             }else {
-            $errorMsgLogin="Usuario ou Senha Incorretos.";
+                $errorMsgLogin="Usuario ou Senha Incorretos.";
             }
         }
     }
