@@ -1,12 +1,12 @@
 <?php
-class userClass{
+class Admin{
 /* User Login */
 public function userLogin($usernameEmail,$password)
 {
 try{
 		$db = getDB();
 		$hash_password= hash('sha256', $password); //Password encryption 
-		$stmt = $db->prepare("SELECT uid FROM users WHERE (username=:usernameEmail or email=:usernameEmail) AND password=:hash_password"); 
+		$stmt = $db->prepare("SELECT uid FROM usuario_adm WHERE (name=:usernameEmail or email=:usernameEmail) AND pass=:hash_password"); 
 		$stmt->bindParam("usernameEmail", $usernameEmail,PDO::PARAM_STR) ;
 		$stmt->bindParam("hash_password", $hash_password,PDO::PARAM_STR) ;
 		$stmt->execute();
@@ -30,7 +30,7 @@ try{
 public function userDetails($uid){
 	try{
 		$db = getDB();
-		$stmt = $db->prepare("SELECT email,username,name FROM users WHERE uid=:uid"); 
+		$stmt = $db->prepare("SELECT email,name FROM usuario_adm WHERE uid=:uid"); 
 		$stmt->bindParam("uid", $uid,PDO::PARAM_INT);
 		$stmt->execute();
 		$data = $stmt->fetch(PDO::FETCH_OBJ); //User data

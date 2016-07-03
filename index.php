@@ -1,10 +1,12 @@
 <?php
-    include("config.php");
-    include('class/userClass.php');
+
+    include('config/config.php');
+    include('class/Admin.php');
+
     if($_SESSION['uid']){ //Valida se o usuario esta logado e tenta acessar a pagina de login.
-        header("Location: /projeto/cadastro.php"); // Page redirecting to home.php 
+        header("Location: landingPage.php"); // Page redirecting to home.php 
     }
-    $userClass = new userClass();
+    $userClass = new Admin();
 
     $errorMsgReg='';
     $errorMsgLogin='';
@@ -15,7 +17,7 @@
     if(strlen(trim($usernameEmail))>1 && strlen(trim($password))>1 ) {
         $uid=$userClass->userLogin($usernameEmail,$password);
             if($uid){
-                header("Location: /projeto/cadastro.php"); // Page redirecting to home.php 
+                header("Location: landingPage.php"); // Page redirecting to home.php 
             }else {
                 $errorMsgLogin="Usuario ou Senha Incorretos.";
             }
@@ -31,34 +33,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
-<style type="text/css">
-    #login,#signup{
-    width: 300px; border: 1px solid #d6d7da; 
-    padding: 0px 15px 15px 15px; 
-    border-radius: 5px;font-family: arial; 
-    line-height: 16px;color: #333333; font-size: 14px; 
-    background: #ffffff;rgba(200,200,200,0.7) 0 4px 10px -1px
-    }
-    #login{float:left;}
-    #signup{float:right;}
-    h3{color:#365D98}
-    form label{font-weight: bold;}
-    form label, form input{display: block;margin-bottom: 5px;width: 90%}
-    form input{ 
-    border: solid 1px #666666;padding: 10px;
-    border: solid 1px #BDC7D8; margin-bottom: 20px
-    }
-    .button {
-    background-color: #5fcf80 ;
-    border-color: #3ac162;
-    font-weight: bold;
-    padding: 12px 15px;
-    max-width: 100px;
-    color: #ffffff;
-    }
-    .errorMsg{color: #cc0000;margin-bottom: 10px}
-</style>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 

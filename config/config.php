@@ -4,8 +4,7 @@ session_start();
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '123');
-define('DB_DATABASE', 'sec_login');
-define("BASE_URL", "http://localhost/projeto/cadastro.php/"); // Eg. http://yourwebsite.com
+define('DB_DATABASE', 'login');
 
 
 function getDB() {
