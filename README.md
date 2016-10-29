@@ -1,6 +1,18 @@
+Simple PHP Login for small projects. 
+
+With this project you can set easily set up a page that can only be accessed through user authentication. Safe against SQL Injection.
+
+PHP Login Simples
+
+com este projeto você consegue rapidamente iniciar um projeto com paginas que só poderam ser acessadas através de autenticação de usuario. Seguro contra SQL injection.
+
+
 Instructions
+
 1 - Clone/Download the repository, inside the etc folder you will find a "usuario.sql" file, it's a simple table to store users
+
 2 - Import/Execute the sql file in your Database.
+
 3 - Go to the project folder,inside config/config.php and set up the username,password and database name inside of each DEFINE.
 
 You're ready to go!
@@ -15,9 +27,12 @@ created user row, in the database.
 --
 
 Instruções
+
 1 - Clonar/Baixar o repositorio, dentro da pasta etc, você encotrará um script 'usuario.sql', é uma tabela simples para guardar
 os usuarios.
+
 2 - Importar/Executar o arquivo sql no seu banco de dados.
+
 3 - Ir na pasta do projeto, dentro de config/config.php e coloque o usuario, senha e nome do seu banco de dados em cada DEFINE
 
 Pronto!
