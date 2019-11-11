@@ -1,6 +1,6 @@
 Simple PHP Login for small projects. 
 
-With this project you can set easily set up a page that can only be accessed through user authentication. Safe against SQL Injection.
+With this project you can easily set up a page that can only be accessed through user authentication. Safe against SQL Injection.
 
 PHP Login Simples
 
